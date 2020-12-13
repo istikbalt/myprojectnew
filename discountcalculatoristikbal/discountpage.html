@@ -1,0 +1,104 @@
+<!Doctype html>
+<html>
+    <head>
+        <style>
+            body {
+              background-image: url('new11.jpg');
+            }
+            </style>
+        <link rel="stylesheet" href="main.css">
+    </head>
+
+    <header class="header_wrapper">
+        <img
+          alt="HappyFeast.jpg"
+          class="feast_logo"
+          src="happyfeastlogod.webp"
+        />
+        <h1 class="ofo_txt">Home</h1>
+      </header>
+      
+<body>
+    <nav>
+        <div class="sidenav">
+          <a href="../Sangeetha/pages/searchOrder.html">Search</a>
+          <a href="../Membership/membership.html">Get Membership</a>
+          <a href="../Review/review.html">Review and Rating</a>
+          <a href="#">Filter Options</a>
+          <a href="#">Games</a>
+          <a href="#">Discount</a>
+          <a href="../Feedback/feedback.html">Feed Back</a>
+          <a href="../AboutUs/pages/AboutUs.html">About us</a>
+          <a href="../ContactUs/pages/ContactUs.html">Contact us</a>
+          <a href="../Logout/Logout.html">Log out</a>
+        </div>
+      </nav>
+    <div>
+        <h1>DISCOUNT CALCULATOR</h1>
+        <P>Please initial price </P>
+    <input id="price">
+    <br><br>
+    
+    <button onclick="getPrice()">
+
+        Get total
+</button>
+    <br><br>
+    <input readonly id="total">
+    <script>
+        getPrice = function() {
+            var numVal1 = Number(document.getElementById("price").value);
+            
+            if ( numVal1 <= 100) {
+
+                discount = 3
+            
+          } else if (numVal1 > 100 && numVal1 <=200) {
+                discount = 5
+           } else {
+                
+                discount = 8
+  
+}
+
+            var numVal2 = numVal1*discount / 100;
+
+            var totalValue = numVal1 - numVal2
+           
+            var taxamount = (totalValue*13)/100
+            var aftertax = totalValue+taxamount
+            document.getElementById("total").value =aftertax.toFixed(2) ;
+               
+               document.writeln("Invoice : " + "<br><br>") ;
+               document.writeln("Initial Charge : " + numVal1 + "<br><br>") ;
+               document.writeln("Discount Amount : " + numVal2+ "<br><br>") ;
+               document.writeln("Tax Amount(after discount) : " + taxamount + "<br><br>") ;
+               document.writeln("Total Price : " + aftertax+ "<br><br>") ;
+
+
+        }
+        
+    </script>
+
+          <div id="explanation">
+            <h2>Discount Calculation</h2>
+         <p>If your initial price is equal or less than 100 cad</p>
+         <p>discount : 3 %</p>
+         <p>If your initial price is between 100 cad and 200 cad or equal to 200 cad </p>
+         <p>discount : 5 %</p>
+         <p>If your initial price is greater than 200 cad</p>
+         <p>discount : 8 %</p>
+         <p>Tax is 13% and will be added after your discount</p>
+                  </div>
+
+                  <footer>
+                    <span class="copyright_text">Copyright &copy; 2020 HappyFeast</span>
+                    <div class="social_site_icons">
+                        <img alt="facebook" src="facebook.png">
+                        <img alt="google" src="google.png">
+                        <img alt="twitter" src="twitter.png">
+                    </div>
+                  </footer>
+      </div>      
+</body>
+</html>
